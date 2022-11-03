@@ -17,5 +17,9 @@ basic.forever(function () {
     dangerous_co2_level = 20
 })
 basic.forever(function () {
-	
+    let blue_stuff = 0
+    let always_bet_on_green = 0
+    let red_stuff = 0
+    let strip: neopixel.Strip = null
+    strip.setPixelColor(0, neopixel.rgb(red_stuff, always_bet_on_green, blue_stuff))
 })
