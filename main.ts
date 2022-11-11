@@ -10,7 +10,7 @@ function funtion_two () {
     }
     led.plotBarGraph(
     gatorMicrophone.getSoundIntensity(),
-    20
+    loud_loud
     )
 }
 input.onButtonPressed(Button.B, function () {
