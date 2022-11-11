@@ -5,7 +5,6 @@ input.onButtonPressed(Button.A, function () {
     }
 })
 function funtion_two () {
-    let loud_loud = 0
     if (gatorMicrophone.getSoundIntensity() >= loud_loud) {
         basic.showString("LOUD")
     }
@@ -30,9 +29,11 @@ function function_one () {
     )
 }
 let vars = 0
+let loud_loud = 0
 let dangerous_co2_level = 0
 gatorEnvironment.beginEnvironment()
 dangerous_co2_level = 1700
+loud_loud = 1700
 basic.forever(function () {
     function_one()
     funtion_two()
