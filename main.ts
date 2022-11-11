@@ -32,7 +32,7 @@ function function_one () {
 let vars = 0
 let dangerous_co2_level = 0
 gatorEnvironment.beginEnvironment()
-dangerous_co2_level = 20
+dangerous_co2_level = 1700
 basic.forever(function () {
     function_one()
     funtion_two()
