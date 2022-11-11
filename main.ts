@@ -14,7 +14,7 @@ function function_one () {
     }
     led.plotBarGraph(
     gatorEnvironment.getMeasurement(measurementType.eCO2),
-    20
+    dangerous_co2_level
     )
 }
 let dangerous_co2_level = 0
