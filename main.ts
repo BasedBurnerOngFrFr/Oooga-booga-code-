@@ -8,24 +8,28 @@ input.onButtonPressed(Button.A, function () {
     makecode_sucks = 1
 })
 function funtion_two () {
-    if (gatorMicrophone.getSoundIntensity() >= loud_loud) {
-        basic.showString("LOUD")
-        music.playTone(523, music.beat(BeatFraction.Whole))
+    if (makecode_sucks == 1) {
+        if (gatorMicrophone.getSoundIntensity() >= loud_loud) {
+            basic.showString("LOUD")
+            music.playTone(523, music.beat(BeatFraction.Whole))
+        }
+        led.plotBarGraph(
+        gatorMicrophone.getSoundIntensity(),
+        loud_loud
+        )
     }
-    led.plotBarGraph(
-    gatorMicrophone.getSoundIntensity(),
-    loud_loud
-    )
 }
 function _3 () {
-    if (gatorEnvironment.getMeasurement(measurementType.degreesC) <= too_cold) {
-        basic.showString("cold")
-        music.playTone(523, music.beat(BeatFraction.Whole))
+    if (makecode_sucks == 1) {
+        if (gatorEnvironment.getMeasurement(measurementType.degreesC) <= too_cold) {
+            basic.showString("cold")
+            music.playTone(523, music.beat(BeatFraction.Whole))
+        }
+        led.plotBarGraph(
+        gatorEnvironment.getMeasurement(measurementType.degreesC),
+        40
+        )
     }
-    led.plotBarGraph(
-    gatorEnvironment.getMeasurement(measurementType.degreesC),
-    40
-    )
 }
 input.onButtonPressed(Button.B, function () {
     vars += 1
@@ -40,14 +44,16 @@ function function_check () {
 	
 }
 function function_one () {
-    if (gatorEnvironment.getMeasurement(measurementType.eCO2) >= dangerous_co2_level) {
-        basic.showString("warning")
-        music.playTone(523, music.beat(BeatFraction.Whole))
+    if (makecode_sucks == 1) {
+        if (gatorEnvironment.getMeasurement(measurementType.eCO2) >= dangerous_co2_level) {
+            basic.showString("warning")
+            music.playTone(523, music.beat(BeatFraction.Whole))
+        }
+        led.plotBarGraph(
+        gatorEnvironment.getMeasurement(measurementType.eCO2),
+        dangerous_co2_level
+        )
     }
-    led.plotBarGraph(
-    gatorEnvironment.getMeasurement(measurementType.eCO2),
-    dangerous_co2_level
-    )
 }
 let makecode_sucks = 0
 let vars = 0
