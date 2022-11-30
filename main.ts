@@ -1,7 +1,7 @@
 input.onButtonPressed(Button.A, function () {
     vars += -1
     if (vars < 1) {
-        vars = 4
+        vars = 3
     }
     makecode_sucks = 0
     basic.showString(convertToText(vars))
@@ -17,16 +17,6 @@ function funtion_two () {
     loud_loud
     )
 }
-function _3_us () {
-    if (gatorEnvironment.getMeasurement(measurementType.degreesC) <= too_cold) {
-        basic.showString("cold")
-        music.playTone(523, music.beat(BeatFraction.Whole))
-    }
-    led.plotBarGraph(
-    gatorEnvironment.getMeasurement(measurementType.degreesF),
-    86
-    )
-}
 function _3 () {
     if (gatorEnvironment.getMeasurement(measurementType.degreesC) <= too_cold) {
         basic.showString("cold")
@@ -34,12 +24,12 @@ function _3 () {
     }
     led.plotBarGraph(
     gatorEnvironment.getMeasurement(measurementType.degreesC),
-    30
+    40
     )
 }
 input.onButtonPressed(Button.B, function () {
     vars += 1
-    if (vars > 4) {
+    if (vars > 3) {
         vars = 1
     }
     makecode_sucks = 0
@@ -66,7 +56,7 @@ let loud_loud = 0
 let dangerous_co2_level = 0
 gatorEnvironment.beginEnvironment()
 dangerous_co2_level = 1000
-loud_loud = 1700
+loud_loud = 2000
 too_cold = -10
 basic.forever(function () {
     if (makecode_sucks == 1) {
@@ -78,9 +68,6 @@ basic.forever(function () {
         }
         if (vars == 3) {
             _3()
-        }
-        if (vars == 4) {
-            _3_us()
         }
     }
 })
