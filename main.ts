@@ -74,6 +74,3 @@ basic.forever(function () {
         _3_us()
     }
 })
-basic.forever(function () {
-	
-})
