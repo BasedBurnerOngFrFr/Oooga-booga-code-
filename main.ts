@@ -1,7 +1,7 @@
 input.onButtonPressed(Button.A, function () {
     vars += -1
     if (vars < 1) {
-        vars = 2
+        vars = 4
     }
 })
 function funtion_two () {
@@ -13,9 +13,27 @@ function funtion_two () {
     loud_loud
     )
 }
+function _3_us () {
+    if (gatorEnvironment.getMeasurement(measurementType.degreesC) <= too_cold) {
+        basic.showString("cold")
+    }
+    led.plotBarGraph(
+    gatorEnvironment.getMeasurement(measurementType.degreesF),
+    86
+    )
+}
+function _3 () {
+    if (gatorEnvironment.getMeasurement(measurementType.degreesC) <= too_cold) {
+        basic.showString("cold")
+    }
+    led.plotBarGraph(
+    gatorEnvironment.getMeasurement(measurementType.degreesC),
+    30
+    )
+}
 input.onButtonPressed(Button.B, function () {
     vars += 1
-    if (vars > 2) {
+    if (vars > 4) {
         vars = 1
     }
 })
@@ -29,14 +47,26 @@ function function_one () {
     )
 }
 let vars = 0
+let too_cold = 0
 let loud_loud = 0
 let dangerous_co2_level = 0
 gatorEnvironment.beginEnvironment()
 dangerous_co2_level = 1000
 loud_loud = 1700
+too_cold = -10
 basic.forever(function () {
-    function_one()
-    funtion_two()
+    if (vars == 1) {
+        function_one()
+    }
+    if (vars == 2) {
+        funtion_two()
+    }
+    if (vars == 3) {
+        _3()
+    }
+    if (vars == 4) {
+        _3_us()
+    }
 })
 basic.forever(function () {
 	
