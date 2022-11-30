@@ -3,10 +3,12 @@ input.onButtonPressed(Button.A, function () {
     if (vars < 1) {
         vars = 4
     }
+    basic.showString(convertToText(vars))
 })
 function funtion_two () {
     if (gatorMicrophone.getSoundIntensity() >= loud_loud) {
         basic.showString("LOUD")
+        music.playTone(523, music.beat(BeatFraction.Whole))
     }
     led.plotBarGraph(
     gatorMicrophone.getSoundIntensity(),
@@ -16,6 +18,7 @@ function funtion_two () {
 function _3_us () {
     if (gatorEnvironment.getMeasurement(measurementType.degreesC) <= too_cold) {
         basic.showString("cold")
+        music.playTone(523, music.beat(BeatFraction.Whole))
     }
     led.plotBarGraph(
     gatorEnvironment.getMeasurement(measurementType.degreesF),
@@ -25,6 +28,7 @@ function _3_us () {
 function _3 () {
     if (gatorEnvironment.getMeasurement(measurementType.degreesC) <= too_cold) {
         basic.showString("cold")
+        music.playTone(523, music.beat(BeatFraction.Whole))
     }
     led.plotBarGraph(
     gatorEnvironment.getMeasurement(measurementType.degreesC),
@@ -36,10 +40,12 @@ input.onButtonPressed(Button.B, function () {
     if (vars > 4) {
         vars = 1
     }
+    basic.showString(convertToText(vars))
 })
 function function_one () {
     if (gatorEnvironment.getMeasurement(measurementType.eCO2) >= dangerous_co2_level) {
         basic.showString("warning")
+        music.playTone(523, music.beat(BeatFraction.Whole))
     }
     led.plotBarGraph(
     gatorEnvironment.getMeasurement(measurementType.eCO2),
