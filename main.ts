@@ -3,7 +3,9 @@ input.onButtonPressed(Button.A, function () {
     if (vars < 1) {
         vars = 4
     }
+    makecode_sucks = 0
     basic.showString(convertToText(vars))
+    makecode_sucks = 1
 })
 function funtion_two () {
     if (gatorMicrophone.getSoundIntensity() >= loud_loud) {
@@ -40,8 +42,13 @@ input.onButtonPressed(Button.B, function () {
     if (vars > 4) {
         vars = 1
     }
+    makecode_sucks = 0
     basic.showString(convertToText(vars))
+    makecode_sucks = 1
 })
+function function_check () {
+	
+}
 function function_one () {
     if (gatorEnvironment.getMeasurement(measurementType.eCO2) >= dangerous_co2_level) {
         basic.showString("warning")
@@ -52,6 +59,7 @@ function function_one () {
     dangerous_co2_level
     )
 }
+let makecode_sucks = 0
 let vars = 0
 let too_cold = 0
 let loud_loud = 0
@@ -61,16 +69,18 @@ dangerous_co2_level = 1000
 loud_loud = 1700
 too_cold = -10
 basic.forever(function () {
-    if (vars == 1) {
-        function_one()
-    }
-    if (vars == 2) {
-        funtion_two()
-    }
-    if (vars == 3) {
-        _3()
-    }
-    if (vars == 4) {
-        _3_us()
+    if (makecode_sucks == 1) {
+        if (vars == 1) {
+            function_one()
+        }
+        if (vars == 2) {
+            funtion_two()
+        }
+        if (vars == 3) {
+            _3()
+        }
+        if (vars == 4) {
+            _3_us()
+        }
     }
 })
